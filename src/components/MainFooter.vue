@@ -40,7 +40,6 @@ footer{
 }
 
 .barra{
-height: 60px;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -53,13 +52,12 @@ width: 100%;
   .barra{
     flex-direction: row;
     justify-content: space-around;
+    gap: 300px;
   }
-
 }
 
 .redes{
-
   display: flex;
-  gap: 5px;
+  gap: 23px;
 }
 </style>

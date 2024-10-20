@@ -29,13 +29,32 @@
       </div>
     </div>
     <div class="campo">
-      <input type="password" placeholder="Contraseña" id="password" v-model="password" />
+      <input :type="isPasswordVisible ? 'text' : 'password'"  placeholder="Contraseña" id="password" v-model="password"  @input="checkPasswordStrength"/>
       <img :src="candado" alt="candado">
-
+      <img
+        :src="isPasswordVisible ? ojoCerrado : ojoAbierto"
+        alt="toggle visibility"
+        @click="togglePasswordVisibility"
+        class="icono-ojo"
+      />
+    </div>
+    <div class="password-strength">
+      <svg width="600" height="10" class="password_svg" viewBox="0 0 544 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 4H130.5" :stroke="colors[0]" stroke-width="2" stroke-linecap="square"/>
+        <path d="M138.5 4H268" :stroke="colors[1]" stroke-width="2" stroke-linecap="square"/>
+        <path d="M276 4H405.5" :stroke="colors[2]" stroke-width="2" stroke-linecap="square"/>
+        <path d="M413.5 4H543" :stroke="colors[3]" stroke-width="2" stroke-linecap="square"/>
+      </svg>
     </div>
     <div class="campo">
-      <input type="password" placeholder="Confirmar contraseña" id="repeatpassword" v-model="repeatPassword"/>
-      <img :src="candado" alt="candado">
+      <input :type="isRepeatPasswordVisible ? 'text' : 'password'" placeholder="Confirmar contraseña" id="repeatpassword" v-model="repeatPassword"/>
+      <img :src="candado" alt="candado"  class="icono-candado">
+      <img
+        :src="isRepeatPasswordVisible ? ojoCerrado : ojoAbierto"
+        alt="toggle visibility"
+        @click="toggleRepeatPasswordVisibility"
+        class="icono-ojo"
+      />
     </div>
 
     <div class="campo checkbox_container">
@@ -57,12 +76,13 @@ import persona from "../assets/img/iconosForm/persona.svg"
 import ancor from "../assets/img/iconosForm/ancor.svg"
 import huella from "../assets/img/iconosForm/huella.svg"
 import candado from "../assets/img/iconosForm/candado.svg"
+import ojoAbierto from "../assets/img/iconosForm/ojoAbierto.svg"
+import ojoCerrado from "../assets/img/iconosForm/ojoCerrado.svg"
 
 import {ref, computed} from "vue"
 import { useRouter } from "vue-router"
 
 const router = useRouter()
-
 
 const name = ref("")
 const lastName = ref("")
@@ -72,7 +92,48 @@ const documentNumber= ref("")
 const documentType = ref('')
 const password = ref ("")
 const repeatPassword=ref("")
+const colors = ref(["#d3d3d3", "#d3d3d3", "#d3d3d3", "#d3d3d3"])
 
+
+const isPasswordVisible = ref(false);
+const isRepeatPasswordVisible = ref(false);
+
+const togglePasswordVisibility = () => {
+  isPasswordVisible.value = !isPasswordVisible.value;
+};
+
+const toggleRepeatPasswordVisibility = () => {
+  isRepeatPasswordVisible.value = !isRepeatPasswordVisible.value;
+};
+function checkPasswordStrength() {
+  const value = password.value
+  let score = 0
+
+
+  if (value.length >= 8) score++
+  if (/[A-Z]/.test(value)) score++
+  if (/[a-z]/.test(value)) score++
+  if (/[0-9]/.test(value)) score++
+  if (/[^A-Za-z0-9]/.test(value)) score++
+
+
+  switch (score) {
+    case 0:
+    case 1:
+      colors.value = ["#FF3B30", "#d3d3d3", "#d3d3d3", "#d3d3d3"] // Muy débil
+      break
+    case 2:
+      colors.value = ["#FF9F0A", "#FF9F0A", "#d3d3d3", "#d3d3d3"] // Débil
+      break
+    case 3:
+      colors.value = ["#FF9F0A", "#FF9F0A", "#FF9F0A", "#d3d3d3"] // Medio
+      break
+    case 4:
+    case 5:
+      colors.value = ["#35C95A", "#35C95A", "#35C95A", "#35C95A"] // Fuerte
+      break
+  }
+}
 
 const isFormValid = computed(() => {
   return  name.value.trim() !== '' &&
@@ -119,14 +180,23 @@ const handleSubmit = () => {
 
 <style scoped>
 
-.formulario {
+.formulario{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  margin: 12px 72px;
+  padding: 12px 12px 12px 12px;
+  margin-bottom: 90px;
 }
+
+@media (min-width: 800px) {
+  .formulario{
+    padding: 10px 50px;
+
+  }
+}
+
 .campo{
   width: 100%;
   position: relative;
@@ -139,6 +209,12 @@ const handleSubmit = () => {
   width: 20px;
   height: 20px;
   object-fit: contain;
+}
+.campo .icono-ojo{
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  margin-left: 550px;
 }
 
 .campo select,
@@ -156,6 +232,14 @@ const handleSubmit = () => {
 .campo input{
   padding: 10px 10px 10px 40px;
 }
+
+.password-strength{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 .documentos {
   display: flex;
   gap: 10px;
@@ -192,14 +276,14 @@ const handleSubmit = () => {
   cursor: pointer;
 }
 button:hover{
-  background-color: rgb(69, 62, 137);
+  background-color: #eceaec;
+  color: black;
+  border: 1px solid black;
 }
 button:disabled{
   background-color: #ccc;
   cursor: not-allowed
 }
-.error{
-  color: red;
-  font-size: 0.9em;
-}
+
+
 </style>

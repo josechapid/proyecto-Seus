@@ -37,18 +37,35 @@ import IconsCirculos from "./IconsCirculos.vue"
 </script>
 
 <style scoped>
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.grid{
+  display: flex;
+  flex-direction: column;
 }
+
 .titulo{
   text-transform: uppercase;
   font-size: 66px;
   text-align: left;
-  margin: 0 0 0 72px;
+  margin: 0 0 0 30px;
   color: #023D6A;
   font-weight: 700;
 }
+
+
+@media (min-width: 1000px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 700px) {
+  .titulo{
+    margin: 0 0 0 40px;
+  }
+}
+
+
 .titulo p{
   margin: 56px 0 24px 0;
 }
@@ -56,19 +73,33 @@ import IconsCirculos from "./IconsCirculos.vue"
 .cards{
   background-color:rgba(168, 168, 168, 0.3);
   border-radius: 20px 20px 0 0;
-  margin-right: 96px;
+  margin: 0 12px;
+}
+
+@media (min-width: 769px){
+  .cards{
   position: relative;
   top: -68px;
+  margin: 0 20px 0 0;
+  }
 }
+
 .titulo_form{
   text-transform:uppercase;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: #023D6A;
   font-size: 38px;
   font-weight: 600;
-  margin: 50px 72px 0 72px;
-
+  padding: 50px 12px 0 12px;
+  text-align: center;
 }
+
+@media (min-width: 769px) {
+.titulo_form{
+  text-align: left;
+  padding: 50px 50px 0 50px;
+}
+}
+
 .titulo_form p{
   margin: 0;
 }
@@ -81,10 +112,25 @@ import IconsCirculos from "./IconsCirculos.vue"
   color: #023D6A;
   font-weight: 500;
   margin-bottom: 95px;
-  padding-left: 62px;
-  padding-top: 105px;
+  padding-left: 40px;
+  padding-top: 40px;
   line-height: 29.26px;
   width: 331px;
   height: 29px;
+}
+
+@media (min-width: 770px) {
+  .cards_titulo{
+    margin-bottom: 95px;
+  padding-left: 62px;
+  padding-top: 105px;
+  line-height: 29.26px;
+  width: 440px;
+  height: 29px;
+  }
+}
+
+.cards_titulo p{
+  margin: 0;
 }
 </style>

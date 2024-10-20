@@ -1,6 +1,5 @@
 <template>
   <div class="card_flex">
-
     <div class="card">
       <div class="logo_card">
         <div class="logo_card-background">
@@ -44,6 +43,8 @@ defineProps(['title', 'description', 'cardLogo', 'cardImage']);
   margin-top: 2rem;
   border: 1px solid #beb9b9;
   border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(86, 85, 85, 0.5);
+  
 }
 .card_info{
 
@@ -82,6 +83,7 @@ border-radius: 50px;
 }
 button{
   cursor: pointer;
+
 }
 .card-button-firts,
 .card-button-second{
@@ -93,12 +95,25 @@ font-weight: 700;
 
 .card-button-firts{
  border: 1px solid #06759F;
- background-color: white;
+ background-color: rgba(251, 248, 248, 0.959);
  color:#06759F ;
+ transition: background-color 3ms;
 }
 .card-button-second{
   border: none;
   background-color: #0DC6DE;
   color: #CDFDF3;
+  transition: background-color 3ms;
 }
+.card-button-firts:hover{
+  background-color: rgba(221, 221, 221, 0.959);
+  color: black;
+  border:1px solid black;
+}
+.card-button-second:hover{
+  background-color:#06759F;
+  color: white;
+  border:1px solid white;
+}
+
 </style>

@@ -26,7 +26,7 @@ header{
 
 }
 header img{
-  margin-left: 72px;
+  margin-left: 40px;
 }
 
 </style>

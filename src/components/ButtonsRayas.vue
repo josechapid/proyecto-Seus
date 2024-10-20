@@ -30,6 +30,11 @@ import flecha from "../assets/img/Buttons/flecha.svg"
   border-color: #045480;
   width: 126px;
   height: 31px;
+  transition: background-color 3ms;
+}
+.botones_opinion-first:hover,
+.botones_opinion-second:hover{
+background-color: rgb(242, 216, 20);
 }
 .botones_opinion-first img {
   width: 16px;
