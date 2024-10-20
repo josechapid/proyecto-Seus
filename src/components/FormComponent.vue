@@ -120,17 +120,17 @@ function checkPasswordStrength() {
   switch (score) {
     case 0:
     case 1:
-      colors.value = ["#FF3B30", "#d3d3d3", "#d3d3d3", "#d3d3d3"] // Muy débil
+      colors.value = ["#FF3B30", "#d3d3d3", "#d3d3d3", "#d3d3d3"]
       break
     case 2:
-      colors.value = ["#FF9F0A", "#FF9F0A", "#d3d3d3", "#d3d3d3"] // Débil
+      colors.value = ["#FF9F0A", "#FF9F0A", "#d3d3d3", "#d3d3d3"]
       break
     case 3:
-      colors.value = ["#FF9F0A", "#FF9F0A", "#FF9F0A", "#d3d3d3"] // Medio
+      colors.value = ["#FF9F0A", "#FF9F0A", "#FF9F0A", "#d3d3d3"]
       break
     case 4:
     case 5:
-      colors.value = ["#35C95A", "#35C95A", "#35C95A", "#35C95A"] // Fuerte
+      colors.value = ["#35C95A", "#35C95A", "#35C95A", "#35C95A"] 
       break
   }
 }

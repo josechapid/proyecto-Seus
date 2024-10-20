@@ -38,7 +38,6 @@ const options= [
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* background-color: bisque; */
   flex-wrap:nowrap;
 }
 .title{
@@ -47,7 +46,6 @@ const options= [
   width: 100%;
   font-size: 16px;
   color: rgba(2, 61, 106, 1);
-  /* background-color: aqua; */
 }
 .grid_dos{
   display: flex;

@@ -31,7 +31,6 @@ import OptionsPerfilGrid from './OptionsPerfilGrid.vue';
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: aqua; */
   width: 100%;
 }
 </style>

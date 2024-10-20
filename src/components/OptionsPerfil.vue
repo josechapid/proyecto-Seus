@@ -22,7 +22,6 @@ defineProps(["optionLogo", "name"])
   justify-content: center;
   align-items: center;
   width: 250px;
-  /* background-color: brown; */
 }
 .logo_option{
   height: 160px;
@@ -31,8 +30,6 @@ defineProps(["optionLogo", "name"])
   flex-direction: row;
   justify-content: center;
   align-items: center;
-
-  /* background-color: aqua; */
 }
 .logo_background{
   display: flex;
