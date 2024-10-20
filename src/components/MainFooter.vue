@@ -38,12 +38,25 @@ footer{
   background-color: #023D6A;
   color: white;
 }
+
 .barra{
-  height: 60px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+height: 60px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 100px;
+width: 100%;
 }
+
+@media (min-width: 768px) {
+  .barra{
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+}
+
 .redes{
 
   display: flex;

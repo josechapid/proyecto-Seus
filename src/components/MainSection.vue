@@ -53,69 +53,74 @@
             </form>
           </div>
         </div>
+
+
         <div class="cards">
           <div class="cards_titulo">
             <p>Mercado de oportunidades</p>
           </div>
           <div class="cards_grid">
-            <div class="cards_info">
-              <div class="card">
-                <div class="logo_card">
-                  <div class="logo_card-background">
-                    <img :src="cardLogo" alt="">
+            <div class="cards_grid_tarjets">
+
+              <div class="cards_info">
+                <div class="card">
+                  <div class="logo_card">
+                    <div class="logo_card-background">
+                      <img :src="cardLogo" alt="">
+                    </div>
+                  </div>
+                  <div class="card_image">
+                    <img :src="cardImage" alt="">
+                  </div>
+                  <div class="card_info">
+                    <p>Líder de ventas<br>(Canal natural)</p>
+                    <p>Buscamos lider comercial apasionado(a) por el bienestar y la alimentación saludable, empática y con orientación  al logro.</p>
+                  </div>
+                  <div class="card_button">
+                    <button class="card-button-firts">Leer más</button>
+                    <button class="card-button-second">Aplicar a oferta</button>
                   </div>
                 </div>
-                <div class="card_image">
-                  <img :src="cardImage" alt="">
-                </div>
-                <div class="card_info">
-                  <p>Líder de ventas<br>(Canal natural)</p>
-                  <p>Buscamos lider comercial apasionado(a) por el bienestar y la alimentación saludable, empática y con orientación  al logro.</p>
-                </div>
-                <div class="card_button">
-                  <button class="card-button-firts">Leer más</button>
-                  <button class="card-button-second">Aplicar a oferta</button>
+                <div class="botones_opinion">
+                  <button class="botones_opinion-first">Preguntar</button>
+                  <button class="botones_opinion-second">Recomendar</button>
                 </div>
               </div>
-              <div class="botones_opinion">
-                <button class="botones_opinion-first">Preguntar</button>
-                <button class="botones_opinion-second">Recomendar</button>
-              </div>
-            </div>
-            <div class="cards_info">
-              <div class="card">
-                <div class="logo_card">
-                  <div class="logo_card-background">
-                    <img :src="cardLogo" alt="">
+              <div class="cards_info">
+                <div class="card">
+                  <div class="logo_card">
+                    <div class="logo_card-background">
+                      <img :src="cardLogo" alt="">
+                    </div>
+                  </div>
+                  <div class="card_image">
+                    <img :src="cardImage" alt="">
+                  </div>
+                  <div class="card_info">
+                    <p>Líder de ventas<br>(Canal natural)</p>
+                    <p>Buscamos lider comercial apasionado(a) por el bienestar y la alimentación saludable, empática y con orientación  al logro.</p>
+                  </div>
+                  <div class="card_button">
+                    <button class="card-button-firts">Leer más</button>
+                    <button class="card-button-second">Aplicar a oferta</button>
                   </div>
                 </div>
-                <div class="card_image">
-                  <img :src="cardImage" alt="">
-                </div>
-                <div class="card_info">
-                  <p>Líder de ventas<br>(Canal natural)</p>
-                  <p>Buscamos lider comercial apasionado(a) por el bienestar y la alimentación saludable, empática y con orientación  al logro.</p>
-                </div>
-                <div class="card_button">
-                  <button class="card-button-firts">Leer más</button>
-                  <button class="card-button-second">Aplicar a oferta</button>
+                <div class="botones_opinion">
+                  <button class="botones_opinion-first">Preguntar</button>
+                  <button class="botones_opinion-second">Recomendar</button>
                 </div>
               </div>
-              <div class="botones_opinion">
-                <button class="botones_opinion-first">Preguntar</button>
-                <button class="botones_opinion-second">Recomendar</button>
+            </div>
+            <div class="iconos">
+              <div class="icono">
+                <img :src="busquedaIcon" alt="lupa">
               </div>
-            </div>
-          </div>
-          <div class="iconos">
-            <div class="icono">
-              <img :src="busquedaIcon" alt="lupa">
-            </div>
-            <div class="icono">
-              <img :src="playIcon" alt="">
-            </div>
-            <div class="icono">
-              <img :src="empresaIcon" alt="">
+              <div class="icono">
+                <img :src="playIcon" alt="">
+              </div>
+              <div class="icono">
+                <img :src="empresaIcon" alt="">
+              </div>
             </div>
           </div>
         </div>
@@ -164,15 +169,17 @@ export default{
 .grid{
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-@media (min-width: 1200px) {
+@media (min-width: 1000px) {
   .grid{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    margin: 0;
   }
-
-
 }
+
 
 /* formulario */
 .formulario_container{
@@ -247,6 +254,15 @@ margin-top: 15px;
 .cards{
   display: flex;
   flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  /* background-color: #A8A8A84D; */
+  padding: 10px 20px 5px 20px;
+
+}
+/* .cards{
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #A8A8A84D;
@@ -256,15 +272,31 @@ margin-top: 15px;
   top:-50px;
   height: 980px;
   width: 660px;
+} */
+
+@media (min-width: 768px) {
+  .cards{
+  justify-content: center;
+  background-color: #A8A8A84D;
+  position: relative;
+  height: 800px;
+  width: 90%;
+  }
 }
+
 .cards_titulo {
  font-size: 24px;
  color: #023D6A;
  text-align: left;
  width: 100%;
 }
+.cards_grid_tarjets{
+  display: flex;
+  gap: 30px;
+}
 .cards_grid{
   display: flex;
+  flex-direction: column;
   width: 100%;
   padding-bottom: 20px;
   margin-bottom: 80px;
@@ -362,6 +394,7 @@ font-weight: 700;
   gap: 60px;
   width: 100%;
   border-top: 1px solid #023D6A;
+
 }
 .icono{
   display: flex;
