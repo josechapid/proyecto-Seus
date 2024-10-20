@@ -1,9 +1,9 @@
-<!-- <template>
+<template>
 <div class="options_grid">
   <div class="title">
     <p>Tipo de formación y empleo que buscas:</p>
   </div>
-  <div class="grid">
+  <div class="grid_dos">
     <OptionsPerfil
     v-for="(option, index) in options"
     :key="index"
@@ -37,18 +37,19 @@ const options= [
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: bisque;
+  align-items: center;
+  /* background-color: bisque; */
   flex-wrap:nowrap;
-  gap: 20px;
-  width: 100%;
-
-
 }
 .title{
   display: flex;
-  justify-content: left;
+  justify-content: flex-start;
+  width: 100%;
+  font-size: 16px;
+  color: rgba(2, 61, 106, 1);
+  /* background-color: aqua; */
 }
-.grid{
+.grid_dos{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,4 +58,4 @@ const options= [
 
 
 </style>
- -->
+

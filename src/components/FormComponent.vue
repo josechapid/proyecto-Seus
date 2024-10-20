@@ -28,7 +28,7 @@
         <img :src="huella" alt="huella">
       </div>
     </div>
-    <div class="campo">
+    <div class="campo password">
       <input :type="isPasswordVisible ? 'text' : 'password'"  placeholder="Contraseña" id="password" v-model="password"  @input="checkPasswordStrength"/>
       <img :src="candado" alt="candado">
       <img
@@ -46,7 +46,7 @@
         <path d="M413.5 4H543" :stroke="colors[3]" stroke-width="2" stroke-linecap="square"/>
       </svg>
     </div>
-    <div class="campo">
+    <div class="campo password">
       <input :type="isRepeatPasswordVisible ? 'text' : 'password'" placeholder="Confirmar contraseña" id="repeatpassword" v-model="repeatPassword"/>
       <img :src="candado" alt="candado"  class="icono-candado">
       <img

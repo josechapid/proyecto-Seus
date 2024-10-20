@@ -1,7 +1,7 @@
-<!-- <template>
+<template>
 <div class="options_container">
  <div class="title">
-  <p>Cofigura esta sección para un perfil más detallado</p>
+  <p>Configura esta sección para un perfil más detallado</p>
  </div>
  <div class="sections_options">
   <OptionsPerfilGrid/>
@@ -27,5 +27,13 @@ import OptionsPerfilGrid from './OptionsPerfilGrid.vue';
   font-weight: 700;
   color: rgba(2, 61, 106, 1);
 }
+.sections_options{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: aqua; */
+  width: 100%;
+}
 </style>
- -->
+
+

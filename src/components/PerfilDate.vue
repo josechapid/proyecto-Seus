@@ -1,5 +1,5 @@
 <template>
-  <Main class="grid">
+  <Main class="grid_container">
     <div class="fotografia">
       <div class="fotografia_fondo">
         <img :src="camara" alt="camara">
@@ -26,7 +26,7 @@ import DataUser from "./DataUser.vue"
 </script>
 
 <style scope>
-.grid{
+.grid_container{
   display: flex;
   justify-content: center;
   align-items: flex-start;

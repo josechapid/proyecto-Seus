@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
   <MainHeader></MainHeader>
   <div class="background">
     <button><img :src="lapiz" alt="lapiz"><span> Editar</span> </button>
@@ -47,4 +47,5 @@ import MainOptions from "@/components/MainOptions.vue"
   color: white;
 }
 </style>
- -->
+
+
