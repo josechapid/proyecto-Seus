@@ -1,11 +1,13 @@
 <template>
 <!-- <IngresoPersonas></IngresoPersonas> -->
- <ingresoUsuarios></ingresoUsuarios>
+ <div id="app">
+    <router-view />
+  </div>
+
 </template>
 
 <script setup>
-/* import IngresoPersonas from "./views/IngresoPersonas.vue"; */
-import ingresoUsuarios from "./views/IngresoUsuarios.vue"
+
 </script>
 
 <style scoped>

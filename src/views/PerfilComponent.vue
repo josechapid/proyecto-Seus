@@ -1,6 +1,6 @@
 <template>
   <MainHeader></MainHeader>
-  <MainSection></MainSection>
+  <h1>hola</h1>
   <SectionEmpresas></SectionEmpresas>
   <MainFooter></MainFooter>
 </template>
@@ -9,7 +9,7 @@
 import MainHeader from "../components/MainHeader.vue"
 import MainFooter from "../components/MainFooter.vue"
 import SectionEmpresas from "../components/SectionEmpresas.vue"
-import MainSection from "../components/MainSection.vue"
+
 </script>
 
 <style scoped>

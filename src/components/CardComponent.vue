@@ -80,7 +80,9 @@ border-radius: 50px;
   flex-direction: column;
   gap: 10px;
 }
-
+button{
+  cursor: pointer;
+}
 .card-button-firts,
 .card-button-second{
 border-radius: 50px;

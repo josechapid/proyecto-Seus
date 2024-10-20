@@ -1,46 +1,53 @@
 <template>
   <form @submit.prevent="handleSubmit" class="formulario">
      <div class="campo">
-       <input type="text" placeholder="Nombres" id="name" />
-       <img :src="persona" alt="">
+       <input type="text" v-model="name" placeholder="Nombres" id="name" />
+       <img :src="persona" alt="persona">
+
     </div>
     <div class="campo">
-      <input type="text" placeholder="Apellidos" id="apellidos" />
-      <img :src="persona" alt="">
+      <input type="text" v-model="lastName" placeholder="Apellidos" id="apellidos" />
+      <img :src="persona" alt="persona">
+
     </div>
     <div class="campo">
-      <input type="email" placeholder="Escribe un email" id="email" />
-      <img :src="ancor" alt="">
+      <input type="email" placeholder="Escribe un email" id="email" v-model="email"/>
+      <img :src="ancor" alt="@">
+
     </div>
     <div class="campo documentos">
-      <div class="campo tipo-documento">
-        <select>
-          <option value="" disabled selected>Tipo de documento</option>
+      <div class="campo tipo-documento" >
+        <select v-model="documentType">
+          <option value="" disabled>Tipo de documento</option>
           <option value="cc">CC</option>
           <option value="pasaporte">Pasaporte</option>
         </select>
       </div>
       <div class="campo numero-documento">
-        <input type="text" placeholder="Número de documento" id="documento" />
-        <img :src="huella" alt="">
+        <input type="text" placeholder="Número de documento" id="documento" v-model="documentNumber" />
+        <img :src="huella" alt="huella">
       </div>
     </div>
     <div class="campo">
-      <input type="password" placeholder="Contraseña" id="password" />
-      <img :src="candado" alt="">
+      <input type="password" placeholder="Contraseña" id="password" v-model="password" />
+      <img :src="candado" alt="candado">
+
     </div>
     <div class="campo">
-      <input type="password" placeholder="Confirmar contraseña" id="repeatpassword" />
-      <img :src="candado" alt="">
+      <input type="password" placeholder="Confirmar contraseña" id="repeatpassword" v-model="repeatPassword"/>
+      <img :src="candado" alt="candado">
     </div>
 
     <div class="campo checkbox_container">
-      <input type="checkbox" id="data-policy" class="checkbox" />
-      <label for="data-policy">Acepto Políticas de Tratamiento de Datos</label>
+      <input type="checkbox"
+      v-model="termsAccepted"
+      id="terms"
+      class="checkbox" />
+      <label for="terms">Acepto Políticas de Tratamiento de Datos</label>
     </div>
 
     <div class="button_form">
-      <button type="submit" class="button">Registrarme</button>
+      <button type="submit" class="button" :disabled="!isFormValid" @click="submitForm" >Registrarme</button>
     </div>
   </form>
 </template>
@@ -51,13 +58,67 @@ import ancor from "../assets/img/iconosForm/ancor.svg"
 import huella from "../assets/img/iconosForm/huella.svg"
 import candado from "../assets/img/iconosForm/candado.svg"
 
-function handleSubmit() {
-  console.log("Formulario enviado");
-}
+import {ref, computed} from "vue"
+import { useRouter } from "vue-router"
+
+const router = useRouter()
+
+
+const name = ref("")
+const lastName = ref("")
+const termsAccepted = ref(false)
+const email= ref("")
+const documentNumber= ref("")
+const documentType = ref('')
+const password = ref ("")
+const repeatPassword=ref("")
+
+
+const isFormValid = computed(() => {
+  return  name.value.trim() !== '' &&
+    lastName.value.trim() !== '' &&
+    email.value.trim() !== '' &&
+    documentNumber.value.trim() !== '' &&
+    documentType.value !== '' &&
+    password.value !== '' &&
+    repeatPassword.value !== '' &&
+    repeatPassword.value === password.value &&
+    termsAccepted.value
+
+});
+
+const handleSubmit = () => {
+  /* alert("formulario enviado correctamente") */
+  console.log('Formulario enviado con éxito:', {
+    name: name.value,
+    lastName: lastName.value,
+    email:email.value,
+    documentNumber: documentNumber.value,
+    documentType: documentType.value,
+    password: password.value,
+    repeatPassword: repeatPassword.value,
+    termsAccepted: termsAccepted.value,
+  });
+
+
+  name.value = '';
+  lastName.value = '';
+  email.value = '';
+  documentNumber.value = '';
+  documentType.value = '';
+  password.value = '';
+  repeatPassword.value = '';
+  termsAccepted.value = false;
+
+  router.push({name: "perfil" })
+};
+
+
+
 </script>
 
 <style scoped>
-/* Estilos del formulario */
+
 .formulario {
   display: flex;
   flex-direction: column;
@@ -97,11 +158,11 @@ function handleSubmit() {
 }
 .documentos {
   display: flex;
-  gap: 10px; /* Espaciado entre los elementos */
+  gap: 10px;
 }
 .tipo-documento,
 .numero-documento {
-  flex: 1; /* Cada elemento ocupará la misma cantidad de espacio */
+  flex: 1;
 }
 .checkbox_container{
   display: grid;
@@ -117,9 +178,9 @@ function handleSubmit() {
   cursor: pointer;
 }
 .button_form {
-  display: flex; /* Asegura que el contenedor sea un flex container */
-  justify-content: flex-start; /* Alinea el contenido al inicio (izquierda) */
-  width: 100%; /* Asegúrate de que el contenedor ocupe todo el ancho */
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
 }
 .formulario button{
   padding: 5px 20px;
@@ -127,5 +188,18 @@ function handleSubmit() {
   color: #F8D2EA;
   border-radius: 20px;
   border: none;
+  height: 37px;
+  cursor: pointer;
+}
+button:hover{
+  background-color: rgb(69, 62, 137);
+}
+button:disabled{
+  background-color: #ccc;
+  cursor: not-allowed
+}
+.error{
+  color: red;
+  font-size: 0.9em;
 }
 </style>
