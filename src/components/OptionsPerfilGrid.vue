@@ -10,7 +10,6 @@
     :optionLogo="option.optionLogo"
     :name="option.name"
     />
-
   </div>
 </div>
 </template>
@@ -40,6 +39,7 @@ const options= [
   align-items: center;
   flex-wrap:nowrap;
 }
+
 .title{
   display: flex;
   justify-content: flex-start;
@@ -47,13 +47,11 @@ const options= [
   font-size: 16px;
   color: rgba(2, 61, 106, 1);
 }
+
 .grid_dos{
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-
-
 </style>
 

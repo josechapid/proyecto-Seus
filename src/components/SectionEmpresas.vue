@@ -13,7 +13,6 @@
 </section>
 </template>
 
-
 <script>
 import logoCocacola from "../assets/img/Empresas/cocacola.svg"
 import logoBancolombia from "../assets/img/Empresas/bancolombia.svg"
@@ -39,6 +38,7 @@ export default {
   background-color: #EFEFEF ;
   height: 84px;
 }
+
 .empresas{
   display: flex;
   justify-content: center;

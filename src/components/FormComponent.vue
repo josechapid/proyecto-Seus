@@ -1,10 +1,9 @@
 <template>
   <form @submit.prevent="handleSubmit" class="formulario">
-
-     <div class="campo">
-       <input type="text" v-model="name" placeholder="Nombres" id="name" @input="validateName"  />
-       <img :src="persona" alt="persona">
-       <p class="error-message" v-if="nameError">{{ nameError }}</p>
+    <div class="campo">
+      <input type="text" v-model="name" placeholder="Nombres" id="name" @input="validateName"  />
+      <img :src="persona" alt="persona">
+      <p class="error-message" v-if="nameError">{{ nameError }}</p>
     </div>
 
     <div class="campo">
@@ -197,7 +196,6 @@ const handleSubmit = () => {
     termsAccepted: termsAccepted.value,
   });
 
-
   name.value = '';
   lastName.value = '';
   email.value = '';
@@ -212,7 +210,6 @@ const handleSubmit = () => {
 </script>
 
 <style scoped>
-
 .formulario{
   display: flex;
   flex-direction: column;
@@ -226,15 +223,14 @@ const handleSubmit = () => {
 @media (min-width: 800px) {
   .formulario{
     padding: 10px 50px;
-
   }
 }
 
 .campo{
   width: 100%;
   position: relative;
-
 }
+
 .campo img{
   position: absolute;
   left: 10px;
@@ -243,6 +239,7 @@ const handleSubmit = () => {
   height: 20px;
   object-fit: contain;
 }
+
 .campo .icono-ojo{
   cursor: pointer;
   width: 24px;
@@ -262,6 +259,7 @@ const handleSubmit = () => {
   flex: 1;
   font-size: 16px;
 }
+
 .campo input{
   padding: 10px 10px 10px 40px;
 }
@@ -277,10 +275,12 @@ const handleSubmit = () => {
   display: flex;
   gap: 10px;
 }
+
 .tipo-documento,
 .numero-documento {
   flex: 1;
 }
+
 .checkbox_container{
   display: grid;
   grid-template-columns: 1fr 10fr;
@@ -294,11 +294,13 @@ const handleSubmit = () => {
   accent-color: #E6E6E6;
   cursor: pointer;
 }
+
 .button_form {
   display: flex;
   justify-content: flex-start;
   width: 100%;
 }
+
 .formulario button{
   padding: 5px 20px;
   background-color: #761D74;
@@ -308,15 +310,18 @@ const handleSubmit = () => {
   height: 37px;
   cursor: pointer;
 }
+
 button:hover{
   background-color: #eceaec;
   color: black;
   border: 1px solid black;
 }
+
 button:disabled{
   background-color: #ccc;
   cursor: not-allowed
 }
+
 .error-message {
   color: #ff3b30;
   font-size: 12px;

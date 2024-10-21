@@ -23,6 +23,7 @@ defineProps(["optionLogo", "name"])
   align-items: center;
   width: 250px;
 }
+
 .logo_option{
   height: 160px;
   width: 160px;
@@ -31,6 +32,7 @@ defineProps(["optionLogo", "name"])
   justify-content: center;
   align-items: center;
 }
+
 .logo_background{
   display: flex;
   justify-content: center;
@@ -41,6 +43,7 @@ defineProps(["optionLogo", "name"])
   border-radius: 100px;
   transition: background-color 3ms;
 }
+
 .logo_background:hover{
 background-color: rgb(145, 93, 144);
 }
@@ -49,14 +52,16 @@ background-color: rgb(145, 93, 144);
   height: 67px;
   width: 67px;
 }
+
 .logo_background img:hover{
   cursor: pointer;
 }
 
- .logo_name{
+.logo_name{
   width: 150px;
   height: 17px;
 }
+
 .logo_name p{
   display: flex;
   align-items: center;
@@ -66,6 +71,4 @@ background-color: rgb(145, 93, 144);
   font-weight: 500;
   margin: 0;
 }
-
-
 </style>

@@ -109,8 +109,8 @@ const resetForm = () => {
 .form-container {
 background-color: rgba(2, 61, 106, 1);
 margin-bottom: 0;
-
 }
+
 .form_content{
   width: 1200px;
   height: auto;
@@ -118,30 +118,34 @@ margin-bottom: 0;
   padding: 20px;
   border-radius: 5px;
 }
+
 .container_form{
 display: flex;
 flex-wrap: wrap;
 gap: 32px;
 justify-content: space-between;
 }
+
 h2,h3 {
   text-align: left;
   color: rgb(255, 255, 255);
-;
 }
 
 .textarea{
   width: 100%;
 }
+
 textarea{
   width: 100%;
   height: 140px;
 }
+
 label {
   display: block;
   margin-bottom: 15px;
   color: rgb(255, 255, 255);
 }
+
 .cargar-archivos{
   display: flex;
   width: 100%;
@@ -155,16 +159,19 @@ label {
   width: 830px;
   height: 24px;
 }
+
 .documents p{
   color: white;
   font-weight: 400;
   line-height: 12px;
   font-size: 10px;
 }
+
 .document_archivos{
   display: flex;
   gap: 10px;
 }
+
 .document_archivos span{
   display: flex;
   align-items: center;
@@ -176,18 +183,19 @@ label {
   padding: 4px 10px;
   color: white;
 }
+
 .trabajo-actual{
   display: flex;
   flex-direction: column;
   width: 182px;
 }
+
 .trabajo-actual  p{
   color: white;
   font-weight: 500;
   line-height: 20px;
   font-size: 14px;
 }
-
 
 input {
   width: 352px;
@@ -197,24 +205,29 @@ input {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
 .date-input{
   width: 160px;
 }
+
 .buttons{
 width: 100%;
 display: flex;
 justify-content: right;
 gap: 20px;
 }
+
 .butUno{
   background-color: rgba(13, 198, 222, 1);
   color: black;
   border-radius: 28px;
 }
+
 .butDos{
   color: black;
   border-radius: 28px;
 }
+
 button {
   width: 160px;
   padding: 10px;

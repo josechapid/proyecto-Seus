@@ -34,7 +34,6 @@
           <button type="submit" class="butDos">Añadir</button>
         </div>
       </form>
-
     </div>
   </div>
 </template>
@@ -53,42 +52,41 @@ export default {
 
     const handleAdd = () => {
 
-      const nuevaFormacion = {
-        tituloAcademico: tituloAcademico.value,
-        institucion: institucion.value,
-        fechaInicio: fechaInicio.value,
-        fechaTerminacion: fechaFinal.value,
-      };
-      formaciones.value.push(nuevaFormacion);
-      resetForm();
+    const nuevaFormacion = {
+      tituloAcademico: tituloAcademico.value,
+      institucion: institucion.value,
+      fechaInicio: fechaInicio.value,
+      fechaTerminacion: fechaFinal.value,
     };
+    formaciones.value.push(nuevaFormacion);
+    resetForm();
+  };
 
-    const handleSubmit = () => {
-      if (formaciones.value.length > 0) {
-        console.log('Datos guardados:', formaciones.value);
-        alert('Datos guardados correctamente.');
-        formaciones.value = []; 
-      } else {
-        alert('No hay datos para guardar.');
-      }
-    };
+  const handleSubmit = () => {
+    if (formaciones.value.length > 0) {
+      console.log('Datos guardados:', formaciones.value);
+      alert('Datos guardados correctamente.');
+      formaciones.value = [];
+    } else {
+      alert('No hay datos para guardar.');
+    }
+  };
 
+  const resetForm = () => {
+    tituloAcademico.value = '';
+    institucion.value = '';
+    fechaInicio.value = '';
+    fechaFinal.value = '';
+  };
 
-    const resetForm = () => {
-      tituloAcademico.value = '';
-      institucion.value = '';
-      fechaInicio.value = '';
-      fechaFinal.value = '';
-    };
-
-    return {
-      tituloAcademico,
-      institucion,
-      fechaInicio,
-      fechaFinal,
-      formaciones,
-      handleAdd,
-      handleSubmit,
+  return {
+    tituloAcademico,
+    institucion,
+    fechaInicio,
+    fechaFinal,
+    formaciones,
+    handleAdd,
+    handleSubmit,
     };
   },
 };
@@ -98,8 +96,8 @@ export default {
 .form-container {
 background-color: rgba(198, 203, 210, 1);
 margin-bottom: 0;
-
 }
+
 .form_content{
   width: 1200px;
   height: auto;
@@ -108,15 +106,14 @@ margin-bottom: 0;
   border-radius: 5px;
 }
 .container_form{
-display: flex;
-flex-wrap: wrap;
-gap: 32px;
-justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: space-between;
 }
 h2 {
   text-align: left;
   color: rgba(2, 61, 106, 1);
-;
 }
 
 label {
@@ -133,24 +130,29 @@ input {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
 .date-input{
   width: 160px;
 }
+
 .buttons{
 width: 100%;
 display: flex;
 justify-content: right;
 gap: 20px;
 }
+
 .butUno{
   background-color: rgba(13, 198, 222, 1);
   color: black;
   border-radius: 28px;
 }
+
 .butDos{
   color: black;
   border-radius: 28px;
 }
+
 button {
   width: 160px;
   padding: 10px;
@@ -186,6 +188,5 @@ button:hover {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-
 }
 </style>

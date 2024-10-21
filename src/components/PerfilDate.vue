@@ -39,6 +39,7 @@ import DataUser from "./DataUser.vue"
   gap: 33px;
   position: relative;
 }
+
 .fotografia_fondo{
   display: flex;
   justify-content: center;
@@ -49,13 +50,14 @@ import DataUser from "./DataUser.vue"
   width: 255px;
   position: relative;
   top: -90px;
-
 }
+
 .lapiz_icon{
   position: absolute;
   right: 100px;
   bottom: -100px;
 }
+
 .fotografia_fondo img{
   height: 113px;
   width: 159px;
@@ -63,6 +65,7 @@ import DataUser from "./DataUser.vue"
   transition: background-color 0.3s ease;
   cursor: pointer;
 }
+
 .fotografia_fondo:hover {
   background-color: rgba(198, 203, 210, 1); /* Cambia el color de fondo */
 }
@@ -71,9 +74,9 @@ import DataUser from "./DataUser.vue"
   font-size: 24px;
   color: rgba(2, 61, 106, 1);
 }
+
 .name span{
   font-size: 34px;
   color: rgba(2, 61, 106, 1);
-;
 }
 </style>

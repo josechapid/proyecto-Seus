@@ -1,8 +1,7 @@
 <template>
   <div class="background">
-      <button><img :src="lapiz" alt="lapiz"><span> Editar</span> </button>
-    </div>
-
+    <button><img :src="lapiz" alt="lapiz"><span> Editar</span> </button>
+  </div>
 </template>
 
 <script setup>
@@ -17,6 +16,7 @@ import lapiz from "../assets/img/perfil/lapiz.svg"
   background-repeat: no-repeat;
   position: relative;
 }
+
 .background button{
   position: absolute;
   right: 100px;
@@ -32,6 +32,7 @@ import lapiz from "../assets/img/perfil/lapiz.svg"
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
 .background button:hover{
   background-color: #555;
   color: white;

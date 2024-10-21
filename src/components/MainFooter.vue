@@ -32,7 +32,6 @@ export default {
 }
 </script>
 
-
 <style>
 footer{
   background-color: #023D6A;

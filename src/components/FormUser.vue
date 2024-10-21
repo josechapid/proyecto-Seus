@@ -140,7 +140,6 @@ export default {
       }
     };
 
-
     const resetForm = () => {
       rangoSalarial.value = '';
       nivelAcademico.value = '';
@@ -186,8 +185,8 @@ export default {
 .form-container {
 background-color: rgb(255, 255, 255);
 margin-bottom: 0;
-
 }
+
 .form_content{
   width: 1200px;
   height: auto;
@@ -195,19 +194,23 @@ margin-bottom: 0;
   padding: 20px;
   border-radius: 5px;
 }
+
 .container_form{
 display: flex;
 flex-wrap: wrap;
 gap: 32px;
 justify-content: space-between;
 }
+
 h2 {
   text-align: left;
   color: rgba(2, 61, 106, 1);
 }
+
 .textarea{
   width: 100%;
 }
+
 textarea{
   width: 100%;
   height: 140px;
@@ -221,6 +224,7 @@ label {
   margin-bottom: 15px;
   color: rgba(2, 61, 106, 1);
 }
+
 select{
   height: 38px;
   width: 544px;
@@ -228,6 +232,7 @@ select{
   border: none;
   border-radius: 4px;
 }
+
 input {
   width: 352px;
   height: 20px;
@@ -237,17 +242,21 @@ input {
   border-radius: 4px;
   background-color: rgba(237, 238, 241, 1);
 }
+
 .inputCiudad{
   width: 365px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
 .input_dosFilas{
   width: 543px;
 }
+
 .divCiudad{
   margin-left: -10px;
 }
+
 .date-input{
   width: 160px;
 }

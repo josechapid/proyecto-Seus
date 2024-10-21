@@ -21,7 +21,6 @@
         </div>
         <div class="cards_container_icon">
           <IconsCirculos/>
-
         </div>
       </div>
     </div>
@@ -32,8 +31,6 @@
 import FormComponent from './FormComponent.vue';
 import CardsGrid from './CardsGrid.vue';
 import IconsCirculos from "./IconsCirculos.vue"
-
-
 </script>
 
 <style scoped>
@@ -51,7 +48,6 @@ import IconsCirculos from "./IconsCirculos.vue"
   font-weight: 700;
 }
 
-
 @media (min-width: 1000px) {
   .grid {
     display: grid;
@@ -64,7 +60,6 @@ import IconsCirculos from "./IconsCirculos.vue"
     margin: 0 0 0 40px;
   }
 }
-
 
 .titulo p{
   margin: 56px 0 24px 0;
@@ -96,12 +91,13 @@ import IconsCirculos from "./IconsCirculos.vue"
 .titulo_form{
   text-align: left;
   padding: 50px 50px 0 50px;
-}
+  }
 }
 
 .titulo_form p{
   margin: 0;
 }
+
 .formulario_container{
   border-top: 24px solid #601565;
 }
@@ -121,11 +117,11 @@ import IconsCirculos from "./IconsCirculos.vue"
 @media (min-width: 770px) {
   .cards_titulo{
     margin-bottom: 95px;
-  padding-left: 62px;
-  padding-top: 105px;
-  line-height: 29.26px;
-  width: 440px;
-  height: 29px;
+    padding-left: 62px;
+    padding-top: 105px;
+    line-height: 29.26px;
+    width: 440px;
+    height: 29px;
   }
 }
 

@@ -1,15 +1,11 @@
 <template>
-<!-- <IngresoPersonas></IngresoPersonas> -->
- <div id="app">
+  <div id="app">
     <router-view />
   </div>
-
 </template>
 
 <script setup>
-
 </script>
 
 <style scoped>
-
 </style>

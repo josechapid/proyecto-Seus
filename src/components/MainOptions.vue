@@ -2,20 +2,17 @@
 <div class="options_container">
   <div class="container_margen">
     <div class="title">
-     <p>Configura esta sección para un perfil más detallado</p>
+      <p>Configura esta sección para un perfil más detallado</p>
     </div>
     <div class="sections_options">
-     <OptionsPerfilGrid/>
+      <OptionsPerfilGrid/>
     </div>
     <div class="sections_options">
-     <OptionsPerfilGrid/>
+      <OptionsPerfilGrid/>
     </div>
-    
-
   </div>
 </div>
 </template>
-
 
 <script setup>
 import OptionsPerfilGrid from './OptionsPerfilGrid.vue';
@@ -26,6 +23,7 @@ import OptionsPerfilGrid from './OptionsPerfilGrid.vue';
   width: 100%;
   background-color: rgba(237, 238, 241, 1);
 }
+
 .container_margen{
   width: 1200px;
   height: auto;
@@ -33,15 +31,18 @@ import OptionsPerfilGrid from './OptionsPerfilGrid.vue';
   padding: 20px;
   border-radius: 5px;
 }
+
 .title{
   display: flex;
   justify-content: center;
 }
+
 .title p{
   font-size: 24px;
   font-weight: 700;
   color: rgba(2, 61, 106, 1);
 }
+
 .sections_options{
   display: flex;
   justify-content: center;
