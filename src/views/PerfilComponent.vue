@@ -3,6 +3,7 @@
   <InicioPerfil></InicioPerfil>
   <PerfilDate></PerfilDate>
   <MainOptions></MainOptions>
+  <FormUser></FormUser>
   <MainFormUser></MainFormUser>
   <FormComplement></FormComplement>
   <SectionEmpresas></SectionEmpresas>
@@ -19,6 +20,8 @@ import MainOptions from "@/components/MainOptions.vue"
 import InicioPerfil from "@/components/InicioPerfil.vue"
 import MainFormUser from "@/components/MainFormUser.vue"
 import FormComplement from "@/components/FormComplement.vue"
+import FormUser from "../components/FormUser.vue"
+
 
 </script>
 
