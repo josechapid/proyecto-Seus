@@ -78,9 +78,8 @@ import IconsCirculos from "./IconsCirculos.vue"
 
 @media (min-width: 769px){
   .cards{
-  position: relative;
-  top: -68px;
-  margin: 0 20px 0 0;
+    margin: 0 20px 0 0;
+    margin-top:-50px;
   }
 }
 
