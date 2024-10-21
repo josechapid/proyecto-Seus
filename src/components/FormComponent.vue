@@ -1,20 +1,24 @@
 <template>
   <form @submit.prevent="handleSubmit" class="formulario">
+
      <div class="campo">
-       <input type="text" v-model="name" placeholder="Nombres" id="name" />
+       <input type="text" v-model="name" placeholder="Nombres" id="name" @input="validateName"  />
        <img :src="persona" alt="persona">
-
+       <p class="error-message" v-if="nameError">{{ nameError }}</p>
     </div>
+
     <div class="campo">
-      <input type="text" v-model="lastName" placeholder="Apellidos" id="apellidos" />
+      <input type="text" v-model="lastName" placeholder="Apellidos" id="apellidos" @input="validateLastName"/>
       <img :src="persona" alt="persona">
-
+      <p class="error-message" v-if="lastNameError">{{ lastNameError }}</p>
     </div>
+
     <div class="campo">
-      <input type="email" placeholder="Escribe un email" id="email" v-model="email"/>
+      <input type="email" placeholder="Escribe un email" id="email" v-model="email" @input="validateEmail"/>
       <img :src="ancor" alt="@">
-
+      <p class="error-message" v-if="emailError">{{ emailError }}</p>
     </div>
+
     <div class="campo documentos">
       <div class="campo tipo-documento" >
         <select v-model="documentType">
@@ -23,10 +27,13 @@
           <option value="pasaporte">Pasaporte</option>
         </select>
       </div>
+
       <div class="campo numero-documento">
-        <input type="text" placeholder="Número de documento" id="documento" v-model="documentNumber" />
+        <input type="text" placeholder="Número de documento" id="documento" v-model="documentNumber" @input="validateDocumentNumber" />
         <img :src="huella" alt="huella">
+         <p class="error-message" v-if="documentError">{{ documentError }}</p>
       </div>
+
     </div>
     <div class="campo password">
       <input :type="isPasswordVisible ? 'text' : 'password'"  placeholder="Contraseña" id="password" v-model="password"  @input="checkPasswordStrength"/>
@@ -94,6 +101,35 @@ const password = ref ("")
 const repeatPassword=ref("")
 const colors = ref(["#d3d3d3", "#d3d3d3", "#d3d3d3", "#d3d3d3"])
 
+const nameError = ref("");
+const lastNameError = ref("")
+const emailError = ref("")
+const documentError = ref("")
+
+function validateName() {
+  nameError.value = name.value.length >= 3
+    ? ""
+    : "El nombre debe tener al menos 3 caracteres."
+}
+function validateLastName() {
+  lastNameError.value = lastName.value.length >= 3
+    ? ""
+    : "El Apellido debe tener al menos 3 caracteres."
+}
+
+function validateEmail() {
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  emailError.value = emailPattern.test(email.value)
+    ? ""
+    : "Por favor ingresa un email válido."
+}
+function validateDocumentNumber() {
+  if (!/^\d*$/.test(documentNumber.value)) {
+    documentError.value = "El número de documento solo debe contener números.";
+  } else {
+    documentError.value = "";
+  }
+}
 
 const isPasswordVisible = ref(false);
 const isRepeatPasswordVisible = ref(false);
@@ -130,7 +166,7 @@ function checkPasswordStrength() {
       break
     case 4:
     case 5:
-      colors.value = ["#35C95A", "#35C95A", "#35C95A", "#35C95A"] 
+      colors.value = ["#35C95A", "#35C95A", "#35C95A", "#35C95A"]
       break
   }
 }
@@ -173,9 +209,6 @@ const handleSubmit = () => {
 
   router.push({name: "perfil" })
 };
-
-
-
 </script>
 
 <style scoped>
@@ -284,6 +317,10 @@ button:disabled{
   background-color: #ccc;
   cursor: not-allowed
 }
-
+.error-message {
+  color: #ff3b30;
+  font-size: 12px;
+  margin-top: 4px;
+}
 
 </style>

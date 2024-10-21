@@ -9,8 +9,8 @@
         </div>
 
        <div class="selectSubmit">
-          <label  for="ciudad">Elige las 5 competencias que más te caracterizan</label>
-          <select type="text" id="ciudad" v-model="ciudad" required>
+          <label  for="competenciaSeleccionada">Elige las 5 competencias que más te caracterizan</label>
+          <select type="text" id="competenciaSeleccionada" v-model="competenciaSeleccionada" @change="handleAddCompetencia" required>
           <option value="" disabled>Selecciona</option>
           <option value="liderazgo">Liderazgo</option>
           <option value="comunicacion">Comunicación efectiva</option>
@@ -21,7 +21,21 @@
           <option value="creatividad">Creatividad</option>
           <option value="gestionTiempo">Gestión del tiempo</option>
           </select>
+           <p v-if="competencias.length >= 5" class="warning">
+            Solo puedes elegir hasta 5 competencias.
+          </p>
         </div>
+
+       <div class="competencias-elegidas">
+          <p v-if="competencias.length === 0">No has seleccionado ninguna competencia.</p>
+          <ul>
+            <li v-for="(comp, index) in competencias" :key="index" >
+              {{ comp }}
+              <button @click="removeCompetencia(index)" class="buttonCompetencia">❌</button>
+            </li>
+          </ul>
+        </div>
+
         <div class="button_submitForm">
           <button type="submit" class="butUno" @click="handleAdd">Guardar información</button>
         </div>
@@ -32,7 +46,41 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
 
+// Variables reactivas
+const logros = ref("");
+const competenciaSeleccionada = ref("");
+const competencias = ref([]);
+
+// Agregar competencia si no está repetida y si hay espacio
+const handleAddCompetencia = () => {
+  if (
+    competenciaSeleccionada.value &&
+    !competencias.value.includes(competenciaSeleccionada.value) &&
+    competencias.value.length < 5
+  ) {
+    competencias.value.push(competenciaSeleccionada.value);
+  }
+  competenciaSeleccionada.value = ""; // Resetear select
+};
+
+// Remover competencia seleccionada
+const removeCompetencia = (index) => {
+  competencias.value.splice(index, 1);
+};
+
+// Enviar formulario y limpiar los datos
+const handleSubmit = () => {
+  console.log("Formulario enviado:", {
+    logros: logros.value,
+    competencias: competencias.value,
+  });
+
+  // Resetear campos
+  logros.value = "";
+  competencias.value = [];
+};
 </script>
 
 <style scoped>
@@ -53,7 +101,7 @@ margin-bottom: 0;
 display: flex;
 flex-wrap: wrap;
 gap: 32px;
-justify-content: space-between;
+justify-content: space-around;
 }
 h2,h3 {
   text-align: left;
@@ -200,5 +248,32 @@ button:hover {
   flex-direction: column;
   align-items: center;
   gap: 10px;
+}
+
+.competencias-elegidas{
+  display: flex;
+  width: 50%;
+  justify-content: center;
+
+}
+.buttonCompetencia{
+  width: 50px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.competencias-elegidas ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.competencias-elegidas li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+  border: 1px solid ;
+  border-radius: 20px;
+  padding: 20px;
 }
 </style>

@@ -17,11 +17,16 @@
           <DataUser/>
       </div>
     </div>
+    <div class="lapiz_icon">
+
+      <InicioPerfil/>
+    </div>
   </Main>
 </template>
 
 <script setup>
 import camara from "../assets/img/perfil/camara.svg"
+import InicioPerfil from "./InicioPerfil.vue"
 import DataUser from "./DataUser.vue"
 </script>
 
@@ -31,8 +36,8 @@ import DataUser from "./DataUser.vue"
   justify-content: center;
   align-items: flex-start;
   height: 300px;
-
   gap: 33px;
+  position: relative;
 }
 .fotografia_fondo{
   display: flex;
@@ -44,10 +49,22 @@ import DataUser from "./DataUser.vue"
   width: 255px;
   position: relative;
   top: -90px;
+
+}
+.lapiz_icon{
+  position: absolute;
+  right: 100px;
+  bottom: -100px;
 }
 .fotografia_fondo img{
   height: 113px;
   width: 159px;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+.fotografia_fondo:hover {
+  background-color: rgba(198, 203, 210, 1); /* Cambia el color de fondo */
 }
 
 .name p{
