@@ -6,6 +6,7 @@
   <FormUser></FormUser>
   <MainFormUser></MainFormUser>
   <FormComplement></FormComplement>
+  <FormSubmit></FormSubmit>
   <SectionEmpresas></SectionEmpresas>
   <MainFooter></MainFooter>
 </template>
@@ -21,6 +22,7 @@ import InicioPerfil from "@/components/InicioPerfil.vue"
 import MainFormUser from "@/components/MainFormUser.vue"
 import FormComplement from "@/components/FormComplement.vue"
 import FormUser from "../components/FormUser.vue"
+import FormSubmit from "../components/FormSubmit.vue"
 
 
 </script>

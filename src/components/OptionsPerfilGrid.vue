@@ -43,7 +43,7 @@ const options= [
 .title{
   display: flex;
   justify-content: flex-start;
-  width: 100%;
+  width: 1200px;
   font-size: 16px;
   color: rgba(2, 61, 106, 1);
 }

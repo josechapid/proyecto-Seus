@@ -211,6 +211,9 @@ h2 {
 textarea{
   width: 100%;
   height: 140px;
+  background-color: rgba(237, 238, 241, 1);
+  border-radius: 4px;
+  border: none;
 }
 
 label {
@@ -221,6 +224,9 @@ label {
 select{
   height: 38px;
   width: 544px;
+  background-color: rgba(237, 238, 241, 1);
+  border: none;
+  border-radius: 4px;
 }
 input {
   width: 352px;
@@ -229,6 +235,7 @@ input {
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  background-color: rgba(237, 238, 241, 1);
 }
 .inputCiudad{
   width: 365px;
