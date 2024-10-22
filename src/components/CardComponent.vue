@@ -89,7 +89,7 @@ height: 88px;
   position: absolute;
   top: -46px;
   left: 18px;
-  background: linear-gradient(45deg, #761d74 40%, #0dc6de 60%);
+  background: linear-gradient(110deg, #761d74 0%, #0dc6de 100%);
   justify-content: center;
   align-items: center;
   border-radius: 50%;
