@@ -1,7 +1,7 @@
 <template>
   <div class="main_container">
-    <div class="titulo">
-      <p >Personas</p>
+    <div>
+      <h1 class="titulo">Personas</h1>
     </div>
 
     <div class="grid">
@@ -9,7 +9,6 @@
       <div class="form">
         <div class="titulo_form">
               <p>Empieza tu carrera hoy mismo</p>
-              <div class="barraCorta"></div>
         </div>
           <FormComponent />
       </div>
@@ -19,7 +18,6 @@
           <div class="div1">
             <div class="carTitle">
               <p>Mercado de oportunidades</p>
-              <div class="barraCorta"></div>
             </div>
             <div class="carTarjeta">
               <CardsGrid/>
@@ -35,38 +33,31 @@
 </template>
 
 <script setup>
-import FormComponent from './FormComponent.vue';
-import CardsGrid from './CardsGrid.vue';
-import IconsCirculos from "./IconsCirculos.vue"
+import FormComponent from '../FormComponent.vue';
+import CardsGrid from '../CardsGrid.vue';
+import IconsCirculos from "../IconsCirculos.vue"
+/* import Fondo from "../assets/img/fondo/fondo.svg" */
 </script>
 
 <style scoped>
-
 .main_container{
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%),
-              url('./../assets/img/fondoBlack/fondoBlack.svg');
-  background-size:auto;
-  background-repeat: no-repeat;
-  /* background-color: aqua;
-  display: flex;
-  flex-direction: column; */
+              url('../../assets/img/fondoBlack/fondoBlack.svg');
 }
 .grid{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding-top: 10px;
 }
 
 .titulo{
-  height: auto;
+  width: 385px;
+  height: 80px;
   text-transform: uppercase;
   font-size: 66px;
   text-align: left;
+  margin: 56px 936px 24px 191px;
   color: #023D6A;
   font-weight: bold;
-  padding-top: 56px;
-  padding-bottom: 24px;
-  padding-left: 191px;
 }
 
 .form{
@@ -76,27 +67,28 @@ import IconsCirculos from "./IconsCirculos.vue"
 }
 .titulo_form{
   height:  auto;
-  width: 500px;
+  width: auto;
   color: #023D6A;
   font-size: 38px;
   text-transform: uppercase;
-  margin: 70px 0 65px 136px;
+  margin: 70px 186px 65px 136px;
   font-weight: 600;
   text-align: left;
   line-height: auto;
-  max-width: 500px;
+  line-height: 1.2;
+  max-width: 400px;
 }
-.contenedorCards{
-  background-color: #FFFFFF;
-  max-width: 756px;
-}
+
+/* .contenedor_cards{
+
+} */
+
 .cards{
 width: 100%;
 min-height: 980px;
 max-width: 660px;
 border-radius: 40px 40px 0 0;
-background-color: rgba(168, 168, 168, 0.3);
-margin-top: -50px ;
+margin-top:  -50px;
 }
 
 .cards_container{
@@ -110,7 +102,7 @@ margin-top: -50px ;
   display: flex;
   flex-direction: column;
 }
-.carTitle{
+.cards_titulo{
   width: 331px;
   height: 29px;
   font-size: 24px;
@@ -118,13 +110,7 @@ margin-top: -50px ;
   font-weight: 500;
   text-align: top;
   white-space: nowrap;
-  margin: 105px 0 95px 105px;
-}
-.barraCorta{
-  width: 64px;
-  height: 8px;
-  background-color: #601565;
-  border-radius: 7px;
+  margin: 30px auto;
 }
 
 .cards_container_icon{

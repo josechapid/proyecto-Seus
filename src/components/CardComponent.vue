@@ -1,6 +1,6 @@
 <template>
-  <div class="card_flex">
-    <div class="card">
+  <div>
+    <div class="card_sola">
       <div class="logo_card">
         <div class="logo_card-background">
           <img :src="cardLogo" alt="Logo" />
@@ -10,8 +10,12 @@
         <img :src="cardImage" alt="Imagen de la oferta" />
       </div>
       <div class="card_info">
-        <p>{{ title }}</p>
-        <p>{{ description }}</p>
+        <div class="card_title">
+          <p><span>Líder de Ventas</span> <br> (canal natural)</p>
+        </div>
+        <div class="card_description">
+          <p >{{ description }}</p>
+        </div>
       </div>
       <div class="card_button">
         <button class="card-button-firts">Leer más</button>
@@ -26,58 +30,91 @@
 
 <script setup>
 import ButtonsRayas from "./ButtonsRayas.vue"
-defineProps(['title', 'description', 'cardLogo', 'cardImage']);
+defineProps(['description', 'cardLogo', 'cardImage']);
 </script>
 
 <style scoped>
-.card {
-  position: relative;
-  border-radius: 10px;
-  margin-bottom: 20px;
+.card_sola {
+  max-width: 268px;
+  height:auto;
+  border-radius: 12px;
+  padding-bottom: 20px;
   background-color: #ffffff;
+  position: relative;
   display: flex;
   flex-direction: column;
+  border-radius: 12px;
+  gap: 6px;
+  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.15);
+}
+.card_image{
+  height: 155px;
   width: 268px;
-  height:431px;
-  margin-top: 2rem;
-  border: 1px solid #beb9b9;
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px rgba(86, 85, 85, 0.5);
+}
+
+.card_image img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .card_info{
-  padding: 5px 20px;
+  width: 268px;
+  height: 152px;
+  padding: 10px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.card_info p{
+  font-size: 14px;
+}
+.card_info span{
+  font-size: 18px;
+  font-weight: 700;
+}
+.card_title{
+  width:238px;
+  height: 38px;
+}
+.card_description{
+width: 238px;
+height: 88px;
 }
 
 .logo_card{
-  display: flex;
-  position: absolute;
-  top: -50px;
-  left: 25px;
-  background: linear-gradient(112.76deg, #761D74 0.53%, #0DC6DE 100%);
   width: 96px;
   height: 96px;
+  display: flex;
+  position: absolute;
+  top: -46px;
+  left: 18px;
+  background: linear-gradient(45deg, #761d74 40%, #0dc6de 60%);
   justify-content: center;
   align-items: center;
-  border-radius: 50px;
+  border-radius: 50%;
 }
 
 .logo_card-background{
   display: flex;
-  background-color: #E6E6E6;
+  background-color: #ffffff;
   justify-content: center;
   align-items: center;
-  border-radius: 60px;
+  border-radius: 50%;
   width: 85px;
   height: 85px;
 }
 
 .card_button{
+  width: 268px;
+  height: 92px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   gap: 10px;
+  padding: 0 18px;
+
 }
 
 button{
@@ -86,10 +123,11 @@ button{
 
 .card-button-firts,
 .card-button-second{
-  border-radius: 50px;
+  border-radius: 28px;
   height: 41px;
   width: 198px;
   font-weight: 700;
+  font-family: 'Inter', sans-serif;
 }
 
 .card-button-firts{
@@ -116,5 +154,9 @@ button{
   background-color:#06759F;
   color: white;
   border:1px solid white;
+}
+
+.buttons_rayas{
+  margin: 29px 0 44px 0 ;
 }
 </style>

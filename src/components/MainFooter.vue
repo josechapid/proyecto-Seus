@@ -1,8 +1,6 @@
 <template>
-<footer>
-  <div class="container">
-    <div class="barra">
-      <div>
+<footer class="footer_container">
+      <div class="descriptionEmpresa">
         <p>Powered by SolutionSolt.com</p>
       </div>
       <div class="redes">
@@ -10,8 +8,6 @@
         <img :src="logoX" alt="x">
         <img :src="logoInstagram" alt="instagram">
       </div>
-    </div>
-  </div>
 </footer>
 
 </template>
@@ -33,12 +29,41 @@ export default {
 </script>
 
 <style>
-footer{
+.footer_container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
   background-color: #023D6A;
   color: white;
+  padding: 14px 197px;
 }
 
-.barra{
+.descriptionEmpresa{
+  width: 142px;
+  height: 12px;
+  font-family:'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  text-align: left;
+  columns: #FFFFFF;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.redes{
+  display: flex;
+  justify-content: space-between;
+  width: 121px;
+  height: 25px;
+  display: flex;
+  gap: 23px;
+}
+.redes img{
+  width: 25px;
+  height: 25px;
+}
+/* .barra{
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -53,10 +78,7 @@ width: 100%;
     justify-content: space-around;
     gap: 300px;
   }
-}
+} */
 
-.redes{
-  display: flex;
-  gap: 23px;
-}
+
 </style>

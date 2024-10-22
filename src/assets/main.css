@@ -2,8 +2,18 @@
   --fuente-principal: color: red;
 }
 
-body{
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body{  
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
+}
+
+p{
+  margin: 0;
 }
