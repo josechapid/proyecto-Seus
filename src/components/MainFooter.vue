@@ -31,12 +31,13 @@ export default {
 <style>
 .footer_container{
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap:24px;
   align-items: center;
-  height: 60px;
   background-color: #023D6A;
   color: white;
-  padding: 14px 197px;
+  padding: 18px ;
+  height: 100px;
 }
 
 .descriptionEmpresa{
@@ -63,22 +64,15 @@ export default {
   width: 25px;
   height: 25px;
 }
-/* .barra{
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-height: 100px;
-width: 100%;
-}
 
-@media (min-width: 768px) {
-  .barra{
+@media (min-width: 1512px) {
+  .footer_container{
     flex-direction: row;
     justify-content: space-around;
     gap: 300px;
   }
-} */
+}
+
 
 
 </style>

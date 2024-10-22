@@ -1,72 +1,89 @@
 <template>
-<section class="empresas_container">
-  <div class="empresas">
-    <img :src="logoCocacola" alt="Cocacola" class="logo_cocacola">
-    <img :src="logoBancolombia" alt="Bancolombia" class="logo_bancolombia">
-    <img :src="logoNutresa" alt="Nutresa" class="logo_nutresa">
-    <img :src="logoVelez" alt="Velez" class="logo_velez">
-    <img :src="logoCocacola" alt="Cocacola" class="logo_cocacola">
-    <img :src="logoBancolombia" alt="Bancolombia" class="logo_bancolombia">
-    <img :src="logoNutresa" alt="Nutresa" class="logo_nutresa">
-    <img :src="logoVelez" alt="Velez" class="logo_velez">
+  <section class="empresas_container">
+    <div class="empresas">
+      <img :src="logoCocacola" alt="Cocacola" class="logo_cocacola" />
+      <img :src="logoBancolombia" alt="Bancolombia" class="logo_bancolombia" />
+      <img :src="logoNutresa" alt="Nutresa" class="logo_nutresa" />
+      <img :src="logoVelez" alt="Velez" class="logo_velez" />
+      <img :src="logoCocacola" alt="Cocacola" class="logo_cocacola hidden"  />
+      <img :src="logoBancolombia" alt="Bancolombia" class="logo_bancolombia hidden" />
+      <img :src="logoNutresa" alt="Nutresa" class="logo_nutresa hidden"  />
+      <img :src="logoVelez" alt="Velez" class="logo_velez hidden" />
+    </div>
+  </section>
 
-  </div>
-</section>
 </template>
 
 <script>
-import logoCocacola from "../assets/img/Empresas/cocacola.svg"
-import logoBancolombia from "../assets/img/Empresas/bancolombia.svg"
-import logoNutresa from "../assets/img/Empresas/nutresa.svg"
-import logoVelez from "../assets/img/Empresas/velez.svg"
+import logoCocacola from "../assets/img/Empresas/cocacola.svg";
+import logoBancolombia from "../assets/img/Empresas/bancolombia.svg";
+import logoNutresa from "../assets/img/Empresas/nutresa.svg";
+import logoVelez from "../assets/img/Empresas/velez.svg";
 
 export default {
-  data(){
-    return{
+  data() {
+    return {
       logoCocacola,
       logoNutresa,
       logoBancolombia,
       logoVelez,
-    }
-  }
-}
+    };
+  },
+};
+
 </script>
 
 <style>
-.empresas_container{
+.empresas_container {
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: center;
-  background-color: #EFEFEF ;
-  height: 84px;
-  padding: 10px;
+  background-color: #efefef;
+  width: 100%;
+  height: 81px;
 }
 
-.empresas{
-  width: 816px;
-  height: 49px;
+.empresas {
   display: flex;
-  justify-content: space-between;
-  margin: 17.5px 348px;
-
   align-items: center;
-  gap: 40px;
+  justify-content: center;
+  gap: 30px;
+  padding: 0 16px;
 }
-.logo_cocacola{
-width: 71px;
-height: 22px;
+
+ .hidden {
+  display: none;
 }
-.logo_bancolombia{
-width: 101px;
-height: 37px;
+
+@media (min-width: 746px) {
+  .hidden {
+    display: inline;
+  }
+  .empresas_container{
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 300px;
+  }
 }
-.logo_nutresa{
-width: 35px;
-height: 47px;
+
+
+.logo_cocacola {
+  width: 71px;
+  height: 22px;
 }
-.logo_velez{
-width: 60px;
-height: 49px;
+.logo_bancolombia {
+  width: 101px;
+  height: 37px;
 }
+.logo_nutresa {
+  width: 35px;
+  height: 47px;
+}
+.logo_velez {
+  width: 60px;
+  height: 49px;
+}
+
+
 
 </style>

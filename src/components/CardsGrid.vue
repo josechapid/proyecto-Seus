@@ -25,8 +25,8 @@ const cards = [
 .cards_grid_tarjets {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  align-items: start;
+  flex-wrap: nowrap;
   gap: 40px;
-  padding-bottom: 44px;
 }
 </style>

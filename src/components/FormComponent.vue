@@ -230,15 +230,18 @@ const handleSubmit = () => {
 .formulario{
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  max-width: 544px;
+  /* align-items: stretch; */
   width: 100%;
   height: auto;
   gap: 24px;
   margin: 0px;
-  padding: 20px;
+  /* padding: 20px; */
 }
-
+@media (min-width: 1512px ) {
+ .formulario{
+  gap: 32px;
+ }
+}
 
 .campo{
   width: 100%;
@@ -281,7 +284,7 @@ const handleSubmit = () => {
   box-sizing: border-box;
   outline: none;
   flex: 1;
-  font-size: 16px;
+  font-size: 14px;
 }
 select{
   height: 40px;
@@ -290,6 +293,7 @@ select{
   padding: 10px 10px 10px 44px;
 }
 .label{
+  font-size: 14px;
   color: #761D74;
 }
 
@@ -320,11 +324,12 @@ height: 8px;
 .checkbox_container{
   display: flex;
   justify-content: start;
-  align-items: center;
+  align-items: cente;
   width: 332px;
   gap: 18px;
-  white-space: nowrap;
+  white-space: wrap;
   font-size: 14px;
+  white-space: nowrap;
 }
 .checkbox_container span{
   color:#4A0E54;
@@ -333,8 +338,8 @@ height: 8px;
 }
 
 .checkbox {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   margin: 0;
   accent-color: #E6E6E6;
   cursor: pointer;
@@ -385,10 +390,10 @@ button:disabled{
   .formulario {
     margin: 20px; /* Reduce márgenes en pantallas pequeñas */
   }
-  .checkbox_container {
-    flex-direction: column; /* Cambia la dirección a columna si hay poco espacio */
-    align-items: flex-start; /* Alinear a la izquierda en lugar de centrar */
-  }
+  /* .checkbox_container {
+    flex-direction: column;
+    align-items: flex-start;
+  } */
 }
 
 </style>

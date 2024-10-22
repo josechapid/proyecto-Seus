@@ -1,14 +1,10 @@
 <template>
-  <div>
-    <div class="card_sola">
-      <div class="logo_card">
-        <div class="logo_card-background">
-          <img :src="cardLogo" alt="Logo" />
+  <div class="cardPrincipal">
+
+    <div class="card_cuerpo">
+        <div class="card_image">
+          <img :src="cardImage" alt="Imagen de la oferta" />
         </div>
-      </div>
-      <div class="card_image">
-        <img :src="cardImage" alt="Imagen de la oferta" />
-      </div>
       <div class="card_info">
         <div class="card_title">
           <p><span>Líder de Ventas</span> <br> (canal natural)</p>
@@ -25,6 +21,11 @@
     <div class="buttons_rayas">
       <ButtonsRayas/>
     </div>
+    <div class="logo_card">
+      <div class="logo_card-background">
+        <img :src="cardLogo" alt="Logo" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -34,17 +35,25 @@ defineProps(['description', 'cardLogo', 'cardImage']);
 </script>
 
 <style scoped>
-.card_sola {
+.cardPrincipal {
   max-width: 268px;
   height:auto;
   border-radius: 12px;
-  padding-bottom: 20px;
-  background-color: #ffffff;
+  padding-top: 60px;
   position: relative;
   display: flex;
+  align-items: center;
   flex-direction: column;
+  gap: 22px;
+}
+
+.card_cuerpo{
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  gap: 22px;
+  align-items: center;
   border-radius: 12px;
-  gap: 6px;
   box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.15);
 }
 .card_image{
@@ -61,10 +70,12 @@ defineProps(['description', 'cardLogo', 'cardImage']);
 .card_info{
   width: 268px;
   height: 152px;
-  padding: 10px 18px;
+  /* padding: 10px 18px; */
+  padding: 0 16px;
   display: flex;
+  align-items: left;
   flex-direction: column;
-  gap: 6px;
+  gap: 10px;
 }
 .card_info p{
   font-size: 14px;
@@ -87,8 +98,8 @@ height: 88px;
   height: 96px;
   display: flex;
   position: absolute;
-  top: -46px;
-  left: 18px;
+  top: 0px;
+  left: 16px;
   background: linear-gradient(110deg, #761d74 0%, #0dc6de 100%);
   justify-content: center;
   align-items: center;
@@ -157,6 +168,6 @@ button{
 }
 
 .buttons_rayas{
-  margin: 29px 0 44px 0 ;
+  padding: 12px 0;
 }
 </style>
