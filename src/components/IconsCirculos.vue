@@ -1,13 +1,13 @@
 <template>
   <div class="iconos">
     <div class="icono">
-      <img :src="busquedaIcon" alt="lupa">
+      <img :src="busquedaIcon" alt="lupa" class="lupa">
     </div>
     <div class="icono">
-      <img :src="playIcon" alt="">
+      <img :src="playIcon" alt="play" class="play">
     </div>
     <div class="icono">
-      <img :src="empresaIcon" alt="">
+      <img :src="empresaIcon" alt="empresa" class="empresa">
     </div>
   </div>
 </template>
@@ -25,7 +25,7 @@ import playIcon from "../assets/img/iconsMain/playIcon.svg"
   align-items: center;
   gap: 60px;
   width: 100%;
-  height: 216px;
+  min-height: 216px;
   border-top: 1px solid #023D6A;
 }
 
@@ -36,6 +36,18 @@ import playIcon from "../assets/img/iconsMain/playIcon.svg"
   height: 128px;
   width: 128px;
   background-color: #D9D9D9;
-  border-radius: 50%;
+  border-radius: 80%;
+}
+.lupa{
+  height: 46px;
+  width: 40.89px;
+}
+.play{
+  height: 42px;
+  width: 42px;
+}
+.empresa{
+  height: 53px;
+  width: 61px;
 }
 </style>

@@ -95,7 +95,8 @@ width: 100%;
 min-height: 980px;
 max-width: 660px;
 border-radius: 40px 40px 0 0;
-background-color: rgba(168, 168, 168, 0.3);
+background-color: rgba(168, 168, 168, 0.1);
+
 margin-top: -50px ;
 }
 
