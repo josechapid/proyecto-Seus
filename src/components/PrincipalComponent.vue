@@ -158,9 +158,7 @@ import IconsCirculos from "./IconsCirculos.vue";
     width: 100%;
     align-items: start;
   }
-  .formulario{
-
-  }
+  
   .container-right {
     width: 756px;
     height: 1068px;
