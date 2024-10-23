@@ -136,17 +136,17 @@ import IconsCirculos from "./IconsCirculos.vue";
 }
 
 @media screen and (max-width: 428px) {
-  .container-right{
+  .carTarjeta{
     overflow-x:auto;
   }
 }
 @media screen and (min-width: 429px) {
-  .container-right{
+  .carTarjeta{
     overflow-x:auto;
   }
 }
 @media screen and (min-width: 500px) {
-  .container-right{
+  .carTarjeta{
     overflow-x:visible;
   }
 }
