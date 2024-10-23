@@ -135,6 +135,22 @@ import IconsCirculos from "./IconsCirculos.vue";
   height: 217px;
 }
 
+@media screen and (max-width: 428px) {
+  .container-right{
+    overflow-x:auto;
+  }
+}
+@media screen and (min-width: 429px) {
+  .container-right{
+    overflow-x:auto;
+  }
+}
+@media screen and (min-width: 500px) {
+  .container-right{
+    overflow-x:visible;
+  }
+}
+
 
 @media screen and (min-width: 712px) {
   .carTarjeta {
@@ -158,7 +174,7 @@ import IconsCirculos from "./IconsCirculos.vue";
     width: 100%;
     align-items: start;
   }
-  
+
   .container-right {
     width: 756px;
     height: 1068px;
@@ -186,7 +202,6 @@ import IconsCirculos from "./IconsCirculos.vue";
     position: absolute;
     bottom: 0;
     left: 0;
-   /*  background-color: rgba(145, 163, 163, 0.474); */
     width: 660px;
     height: 980px;
   }
@@ -220,17 +235,15 @@ import IconsCirculos from "./IconsCirculos.vue";
   width: 100%;
 }
 
-  .container-left {
-    border-bottom: none;
-  }
-  /* .titulo {
-    height: auto;
-    font-size: 66px;
-    color: #023d6a;
-    text-align: left;
-    padding-top: 56px;
-    padding-bottom: 24px;
-    padding-left: 191px;
-  } */
+.container-left {
+  border-bottom: none;
 }
+}
+@media screen and (min-width: 1512px) {
+  .main_container{
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+}
+
 </style>

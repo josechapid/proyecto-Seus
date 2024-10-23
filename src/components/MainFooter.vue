@@ -65,7 +65,7 @@ export default {
   height: 25px;
 }
 
-@media (min-width: 1512px) {
+@media (min-width: 760px) {
   .footer_container{
     flex-direction: row;
     justify-content: space-around;
